@@ -1,0 +1,20 @@
+{:paths ["src"]
+ :deps  {org.clojure/clojure    {:mvn/version "1.11.0-alpha4"}}
+
+ :aliases
+ {:repl/conjure {:extra-deps {nrepl/nrepl       {:mvn/version "0.9.0"}
+                              cider/cider-nrepl {:mvn/version "0.28.4"}}
+                 :main-opts  ["-m" "nrepl.cmdline"
+                              "--middleware" "[cider.nrepl/cider-middleware]"
+                              "--interactive"]}
+  :test       {:extra-paths ["test"]
+               :extra-deps  {lambdaisland/kaocha    {:mvn/version "1.60.977"}
+                             org.clojure/test.check {:mvn/version "1.1.1"}}
+               :exec-fn     kaocha.runner/exec-fn
+               :exec-args   {}}
+  :watch-test {:extra-deps {lambdaisland/kaocha {:mvn/version "1.60.977"}}
+               :exec-fn    kaocha.runner/exec-fn
+               :exec-args  {:watch?     true
+                            :skip-meta  :slow
+                            :fail-fast? true}}}}
+
