@@ -5,8 +5,7 @@
 
 (deftest leftpad-tests
   (testing "nil returns empty"
-    (is (= ""
-           (leftpad nil))))
+    (is (= "" (leftpad nil))))
 
   (testing "Empty returns empty"
     (is (= ""
