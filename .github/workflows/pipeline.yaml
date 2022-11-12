@@ -8,4 +8,4 @@ jobs:
       - uses: DeLaGuardo/setup-clojure@9.5
         with:
           cli: 1.10.1.693
-      - run: clj -X:test
+      - run: clojure -X:test
